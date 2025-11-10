@@ -1,0 +1,58 @@
+# 소스 코드 (배포 시 dist/만 필요)
+src/
+tests/
+
+# 개발 및 아카이브 폴더 (배포 금지)
+openspec/
+backlog/
+docs/
+
+# 설정 파일 (배포 불필요)
+tsconfig.json
+.eslintrc
+.prettierrc
+.editorconfig
+vitest.config.ts
+
+# Git 파일
+.git/
+.gitignore
+.gitattributes
+
+# 로그 및 임시 파일
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+tmp/
+temp/
+*.tmp
+
+# OS 파일
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE 설정
+.vscode/
+.idea/
+*.iml
+.gradle/
+build/
+.out/
+
+# 환경 파일
+.env
+.env.local
+.env.*.local
+
+# 테스트 관련
+coverage/
+.nyc_output/
+*.tsbuildinfo
+
+# 개발용 파일들
+.#*

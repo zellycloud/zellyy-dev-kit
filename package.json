@@ -1,0 +1,68 @@
+{
+  "name": "zellyy-dev-kit",
+  "version": "0.1.5",
+  "description": "Spec-Driven & Test-Driven Development Unified Automation CLI - Integrates OpenSpec, Backlog, and Quality Gates (Brownfield-Ready)",
+  "main": "dist/index.js",
+  "bin": {
+    "zellyy-dev-kit": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "tdd",
+    "openspec",
+    "backlog",
+    "quality-gates",
+    "test-automation",
+    "cli",
+    "developer-tools",
+    "brownfield",
+    "greenfield"
+  ],
+  "author": "Zellyy <hansoo@zellyy.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zellycloud/zellyy-dev-kit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zellycloud/zellyy-dev-kit/issues"
+  },
+  "homepage": "https://github.com/zellycloud/zellyy-dev-kit#readme",
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "inquirer": "^10.2.2",
+    "chalk": "^5.3.0",
+    "ts-morph": "^23.0.0",
+    "markdown-it": "^14.1.0",
+    "gray-matter": "^4.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@types/inquirer": "^9.0.7",
+    "@types/markdown-it": "^14.1.2",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.5",
+    "@vitest/coverage-v8": "^2.1.5",
+    "eslint": "^9.14.0",
+    "prettier": "^3.3.3",
+    "@typescript-eslint/eslint-plugin": "^8.13.0",
+    "@typescript-eslint/parser": "^8.13.0"
+  }
+}
