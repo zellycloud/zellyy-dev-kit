@@ -282,13 +282,13 @@ zellyy-dev-kit commit "feat: add new command"
 zellyy-dev-kit integrates two complementary tools:
 
 #### OpenSpec: Specification-Driven Development
-- **Website**: https://openspec.dev (Coming soon)
+- **Website**: https://openspec.dev
 - **Repository**: https://github.com/zellycloud/openspec
 - **Purpose**: Define, validate, and review system requirements before implementation
 - **Usage**: `zellyy-dev-kit openspec:proposal`, `zellyy-dev-kit openspec:review`
 
 #### Backlog: Task Management CLI
-- **Website**: https://backlog.md (Coming soon)
+- **Website**: https://backlog.md
 - **Repository**: https://github.com/zellycloud/backlog
 - **Purpose**: Track tasks, link to specifications, and manage development workflow
 - **Usage**: `zellyy-dev-kit task:create`, `zellyy-dev-kit task:list`
@@ -639,13 +639,13 @@ zellyy-dev-kit commit "feat: 새 명령어 추가"
 zellyy-dev-kit은 두 가지 보완적인 도구를 통합합니다:
 
 ### OpenSpec: 사양 기반 개발
-- **웹사이트**: https://openspec.dev (준비 중)
+- **웹사이트**: https://openspec.dev
 - **저장소**: https://github.com/zellycloud/openspec
 - **목적**: 구현 전 시스템 요구사항을 정의, 검증, 검토
 - **사용법**: `zellyy-dev-kit openspec:proposal`, `zellyy-dev-kit openspec:review`
 
 ### Backlog: 작업 관리 CLI
-- **웹사이트**: https://backlog.md (준비 중)
+- **웹사이트**: https://backlog.md
 - **저장소**: https://github.com/zellycloud/backlog
 - **목적**: 작업 추적, 사양 연결, 개발 워크플로우 관리
 - **사용법**: `zellyy-dev-kit task:create`, `zellyy-dev-kit task:list`
