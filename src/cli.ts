@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 
 /**
- * zellyy-dev-kit CLI 진입점
+ * zellyy-dev-kit CLI Entry Point
  *
  * @description
- * moai-adk 스타일 전체 개발 프로세스 자동화 CLI 도구
- * Brownfield (기존 프로젝트) + Greenfield (새 프로젝트) 지원
+ * Spec-Driven & Test-Driven Development Unified Automation CLI
+ * Supports both Brownfield (existing projects) and Greenfield (new projects)
  *
  * @example
- * zellyy-dev-kit init
- * zellyy-dev-kit test:fix SmartCategoryService.test.ts
- * zellyy-dev-kit openspec:proposal new-feature
+ * zy init
+ * zy test:fix SmartCategoryService.test.ts
+ * zy openspec:proposal new-feature
  */
 
 import { Command } from 'commander';
@@ -19,186 +19,186 @@ import chalk from 'chalk';
 const program = new Command();
 
 program
-  .name('zellyy-dev-kit')
-  .description('moai-adk 스타일 전체 개발 프로세스 자동화 CLI 도구')
-  .version('0.1.0');
+  .name('zy')
+  .description('Spec-Driven & Test-Driven Development Unified Automation CLI')
+  .version('0.2.2');
 
 // ========================================
-// 프로젝트 초기화 명령어
+// Project Initialization
 // ========================================
 program
   .command('init')
-  .description('프로젝트 초기화 (OpenSpec + Backlog + TDD 인프라)')
-  .option('--full', '전체 인프라 구축 (OpenSpec + Backlog + TDD + CI/CD)')
+  .description('Initialize project (OpenSpec + Backlog + TDD infrastructure)')
+  .option('--full', 'Build complete infrastructure (OpenSpec + Backlog + TDD + CI/CD)')
   .action((options) => {
-    console.log(chalk.blue('🚀 zellyy-dev-kit 프로젝트 초기화'));
-    console.log(chalk.yellow('⚠️  구현 중: Phase 1 (1주)'));
+    console.log(chalk.blue('🚀 zellyy-dev-kit Project Initialization'));
+    console.log(chalk.yellow('⚠️  Under development: Phase 1 (1 week)'));
 
     if (options.full) {
-      console.log(chalk.green('✓ 전체 인프라 모드'));
+      console.log(chalk.green('✓ Full infrastructure mode'));
     }
 
-    // TODO: src/commands/init.ts 구현
+    // TODO: src/commands/init.ts implementation
   });
 
 // ========================================
-// 테스트 관련 명령어
+// Test Commands
 // ========================================
 const testCmd = program
   .command('test')
-  .description('테스트 관련 명령어');
+  .description('Test-related commands');
 
 testCmd
   .command('fix <file>')
-  .description('실패한 테스트 자동 수정 (Precision test fixing)')
+  .description('Auto-fix failing tests (Precision test fixing)')
   .action((file) => {
-    console.log(chalk.blue(`🔧 테스트 수정: ${file}`));
-    console.log(chalk.yellow('⚠️  구현 중: Phase 1 (2일)'));
+    console.log(chalk.blue(`🔧 Test Fix: ${file}`));
+    console.log(chalk.yellow('⚠️  Under development: Phase 1 (2 days)'));
 
-    // TODO: src/commands/test-fix.ts 구현
-    // - AST 분석
-    // - Mock 구조 정렬
-    // - 기대값 보정
+    // TODO: src/commands/test-fix.ts implementation
+    // - AST analysis
+    // - Mock structure alignment
+    // - Expected value adjustment
   });
 
 testCmd
   .command('generate')
-  .description('사양 기반 테스트 자동 생성')
-  .option('--spec <file>', 'OpenSpec 사양 파일 경로')
+  .description('Auto-generate tests from specs')
+  .option('--spec <file>', 'OpenSpec specification file path')
   .action((options) => {
-    console.log(chalk.blue('📝 테스트 자동 생성'));
-    console.log(chalk.yellow('⚠️  구현 중: Phase 2 (1주)'));
+    console.log(chalk.blue('📝 Test Generation'));
+    console.log(chalk.yellow('⚠️  Under development: Phase 2 (1 week)'));
 
-    // TODO: src/commands/test-generate.ts 구현
+    // TODO: src/commands/test-generate.ts implementation
   });
 
 testCmd
   .command('watch')
-  .description('TDD 워크플로우 (RED → GREEN → REFACTOR)')
+  .description('TDD workflow (RED → GREEN → REFACTOR)')
   .action(() => {
-    console.log(chalk.blue('👀 TDD Watch 모드'));
-    console.log(chalk.yellow('⚠️  구현 중: Phase 2 (1주)'));
+    console.log(chalk.blue('👀 TDD Watch Mode'));
+    console.log(chalk.yellow('⚠️  Under development: Phase 2 (1 week)'));
 
-    // TODO: src/commands/test-watch.ts 구현
+    // TODO: src/commands/test-watch.ts implementation
   });
 
 // ========================================
-// OpenSpec 관련 명령어
+// OpenSpec Commands
 // ========================================
 const openspecCmd = program
   .command('openspec')
   .alias('os')
-  .description('OpenSpec 관련 명령어');
+  .description('OpenSpec-related commands');
 
 openspecCmd
   .command('proposal <change-id>')
-  .description('OpenSpec 제안 생성')
+  .description('Create OpenSpec proposal')
   .action((changeId) => {
-    console.log(chalk.blue(`📄 OpenSpec 제안 생성: ${changeId}`));
-    console.log(chalk.yellow('⚠️  구현 중: Phase 1 (1일)'));
+    console.log(chalk.blue(`📄 Create OpenSpec Proposal: ${changeId}`));
+    console.log(chalk.yellow('⚠️  Under development: Phase 1 (1 day)'));
 
-    // TODO: src/commands/openspec.ts 구현
+    // TODO: src/commands/openspec.ts implementation
   });
 
 openspecCmd
   .command('validate <change-id>')
-  .description('OpenSpec 사양 검증')
-  .option('--strict', '엄격한 검증 모드')
+  .description('Validate OpenSpec specification')
+  .option('--strict', 'Enable strict validation mode')
   .action((changeId, options) => {
-    console.log(chalk.blue(`✅ OpenSpec 검증: ${changeId}`));
+    console.log(chalk.blue(`✅ Validate OpenSpec: ${changeId}`));
 
     if (options.strict) {
-      console.log(chalk.green('✓ Strict 모드'));
+      console.log(chalk.green('✓ Strict mode'));
     }
 
-    console.log(chalk.yellow('⚠️  구현 중: Phase 1 (1일)'));
+    console.log(chalk.yellow('⚠️  Under development: Phase 1 (1 day)'));
 
-    // TODO: src/commands/openspec.ts 구현
+    // TODO: src/commands/openspec.ts implementation
   });
 
 openspecCmd
   .command('review <change-id>')
-  .description('Multi-Agent Debate 실행')
+  .description('Execute Multi-Agent Debate')
   .action((changeId) => {
     console.log(chalk.blue(`🤖 Multi-Agent Debate: ${changeId}`));
-    console.log(chalk.yellow('⚠️  구현 중: Phase 2 (1주)'));
+    console.log(chalk.yellow('⚠️  Under development: Phase 2 (1 week)'));
 
-    // TODO: Multi-Agent Debate 통합
+    // TODO: Multi-Agent Debate integration
   });
 
 openspecCmd
   .command('archive <change-id>')
-  .description('OpenSpec 제안 아카이브')
+  .description('Archive OpenSpec proposal')
   .action((changeId) => {
-    console.log(chalk.blue(`📦 OpenSpec 아카이브: ${changeId}`));
-    console.log(chalk.yellow('⚠️  구현 중: Phase 1 (1일)'));
+    console.log(chalk.blue(`📦 Archive OpenSpec: ${changeId}`));
+    console.log(chalk.yellow('⚠️  Under development: Phase 1 (1 day)'));
 
-    // TODO: src/commands/openspec.ts 구현
+    // TODO: src/commands/openspec.ts implementation
   });
 
 // ========================================
-// Backlog 관련 명령어
+// Backlog Commands
 // ========================================
 const taskCmd = program
   .command('task')
-  .description('Backlog 작업 관리 명령어');
+  .description('Backlog task management commands');
 
 taskCmd
   .command('create <title>')
-  .description('Backlog 작업 생성 + OpenSpec 제안 자동 링크')
-  .option('--openspec <change-id>', 'OpenSpec 제안 ID')
+  .description('Create Backlog task + auto-link OpenSpec proposal')
+  .option('--openspec <change-id>', 'OpenSpec proposal ID')
   .action((title, options) => {
-    console.log(chalk.blue(`📋 Backlog 작업 생성: ${title}`));
+    console.log(chalk.blue(`📋 Create Backlog Task: ${title}`));
 
     if (options.openspec) {
-      console.log(chalk.green(`✓ OpenSpec 링크: ${options.openspec}`));
+      console.log(chalk.green(`✓ OpenSpec Link: ${options.openspec}`));
     }
 
-    console.log(chalk.yellow('⚠️  구현 중: Phase 1 (1일)'));
+    console.log(chalk.yellow('⚠️  Under development: Phase 1 (1 day)'));
 
-    // TODO: src/commands/task.ts 구현
+    // TODO: src/commands/task.ts implementation
   });
 
 taskCmd
   .command('sync')
-  .description('Backlog ↔ OpenSpec ↔ Git 추적 체인 검증')
+  .description('Validate traceability chain: Backlog ↔ OpenSpec ↔ Git')
   .action(() => {
-    console.log(chalk.blue('🔄 추적 체인 검증'));
-    console.log(chalk.yellow('⚠️  구현 중: Phase 1 (1일)'));
+    console.log(chalk.blue('🔄 Validate Traceability Chain'));
+    console.log(chalk.yellow('⚠️  Under development: Phase 1 (1 day)'));
 
-    // TODO: src/commands/task.ts 구현
+    // TODO: src/commands/task.ts implementation
   });
 
 // ========================================
-// Quality Gates 명령어
+// Quality Gates
 // ========================================
 program
   .command('quality:check')
   .alias('qc')
-  .description('TRUST 5 Quality Gates 검증')
+  .description('Validate TRUST 5 Quality Gates')
   .action(() => {
-    console.log(chalk.blue('🎯 Quality Gates 검증'));
-    console.log(chalk.yellow('⚠️  구현 중: Phase 2 (1주)'));
+    console.log(chalk.blue('🎯 Quality Gates Validation'));
+    console.log(chalk.yellow('⚠️  Under development: Phase 2 (1 week)'));
 
-    // TODO: src/commands/quality.ts 구현
+    // TODO: src/commands/quality.ts implementation
     // - Coverage ≥70%
     // - ESLint
     // - Security scan
   });
 
 // ========================================
-// Git 커밋 명령어
+// Git Commit
 // ========================================
 program
   .command('commit <message>')
-  .description('Git 커밋 (Backlog ID 자동 추가)')
+  .description('Git commit (auto-add Backlog ID)')
   .action((message) => {
-    console.log(chalk.blue(`💾 Git 커밋: ${message}`));
-    console.log(chalk.yellow('⚠️  구현 중: Phase 1 (1일)'));
+    console.log(chalk.blue(`💾 Git Commit: ${message}`));
+    console.log(chalk.yellow('⚠️  Under development: Phase 1 (1 day)'));
 
-    // TODO: src/commands/task.ts 구현
-    // - Git 브랜치에서 task ID 추출
-    // - 커밋 메시지에 "(refs #XXX)" 자동 추가
+    // TODO: src/commands/task.ts implementation
+    // - Extract task ID from Git branch
+    // - Auto-add "(refs #XXX)" to commit message
   });
 
 // ========================================
@@ -207,10 +207,10 @@ program
 program.on('--help', () => {
   console.log('');
   console.log('Examples:');
-  console.log('  $ zellyy-dev-kit init');
-  console.log('  $ zellyy-dev-kit test:fix SmartCategoryService.test.ts');
-  console.log('  $ zellyy-dev-kit openspec:proposal new-feature');
-  console.log('  $ zellyy-dev-kit task:create "새 기능 추가" --openspec new-feature');
+  console.log('  $ zy init');
+  console.log('  $ zy test:fix SmartCategoryService.test.ts');
+  console.log('  $ zy openspec:proposal new-feature');
+  console.log('  $ zy task:create "Add new feature" --openspec new-feature');
   console.log('');
   console.log('Documentation:');
   console.log('  https://github.com/zellycloud/zellyy-dev-kit');
@@ -218,7 +218,7 @@ program.on('--help', () => {
 
 program.parse(process.argv);
 
-// 명령어 없이 실행 시 help 표시
+// Display help when no command is provided
 if (!process.argv.slice(2).length) {
   program.outputHelp();
 }
